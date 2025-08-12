@@ -12,7 +12,7 @@ intents.dm_messages = True
 
 bot = commands.Bot(command_prefix='-', intents=intents)
 
-WHITELISTED_USERS = [123456789012345678, 1038159009863184396]
+WHITELISTED_USERS = [123, 123]
 
 @bot.event
 async def on_ready():
@@ -87,5 +87,6 @@ async def searchgun(interaction: discord.Interaction, id: int):
         await interaction.response.send_message(f"Error fetching gun information: {req_err}")
     except KeyError as key_err:
         await interaction.response.send_message(f"Missing data in the API response: {key_err}")
+
 
 bot.run(TOKEN)
